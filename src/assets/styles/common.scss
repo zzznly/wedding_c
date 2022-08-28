@@ -1,0 +1,480 @@
+@import './mixin.scss';
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;400;500&family=Dancing+Script:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+html {
+  font-size: 16px;
+  font-family: 'Nanum Myeongjo', serif;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+}
+
+.wedding {
+  max-width: 460px;
+  height: 100vh;
+
+  .header {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: right;
+    background: transparent;
+    position: absolute;
+    z-index: 999;
+    &-menu {
+      width: 32px;
+      height: 32px;
+      &__icon {
+        width: 100%;
+      }
+    }
+  }
+
+  .main {
+    &-intro {
+      height: 100vh;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)), url("../src/assets/img/main.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      text-align: center;
+      padding: 90% 20px 0;
+      color: #f4f4f4;
+
+      &__title {
+        font-family: 'Dancing Script', cursive;
+        font-size: 50px;
+        //padding-top: 320px;
+      }
+      &__date {
+        font-family: 'Alumni Sans', sans-serif;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: 0.05em;
+      }
+      &__place {
+        margin-top: 10px;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+      }
+      &__more {
+        width: 35%;
+        padding: 12px;
+        color: #ffffff;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        margin: 40px auto 0;
+        background: transparent;
+        border: 1px solid #cccccc;
+
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &-greeting {
+      padding: 80px 0;
+      &__photo {
+        width: 300px;
+        height: 200px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        img {
+          width: 130%;
+
+          position: absolute;
+          left: 50%;
+          top: 53%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &__content {
+        color: #2C3E50;
+        text-align: center;
+        .content__title {
+          margin-top: 60px;
+          font-size: 14px;
+          letter-spacing: 0.05em;
+          line-height: 2rem;
+          span {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5em;
+            padding-left: 10px;
+          }
+        }
+        .content__text {
+          font-size: 12px;
+          line-height: 2.4em;
+        }
+      }
+    }
+
+    &-location {
+      padding: 80px 20px;
+      text-align: center;
+      color: #2C3E50;
+
+      &__title {
+        @include section-title;
+      }
+      &__map {
+        margin: 30px auto 0;
+        width: 80%;
+        height: 220px;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 14px;
+        border-radius: 20px;
+      }
+      &__desc {
+        margin-top: 30px;
+        font-size: 14px;
+        line-height: 1.8em;
+
+        .subway {
+          border-radius: 20px;
+          width: 20px;
+          height: 20px;
+          border: 3px solid #e51d6e;
+          color: #e51d6e;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 600;
+          font-size: 12px;
+          padding: 3px 5px 1px;
+        }
+      }
+    }
+
+    &-date {
+      background: #f7f7f7;
+      padding: 60px 20px;
+      &__calendar {
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        margin: auto;
+        color: #555;
+      }
+      &__header {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .date--day {
+          font-size: 20px;
+        }
+      }
+      &__month {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      &__week {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+      }
+      &__day {
+        font-size: 14px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.red {
+          color: #ff0000;
+        }
+      }
+      &__day:nth-child(28) {
+        span {
+          background-color: pink;
+          color: #ffffff;
+          font-weight: 700;
+          border-radius: 30px;
+          padding: 8px;
+        }
+      }
+    }
+
+    &-contact {
+      padding: 80px 20px;
+      text-align: center;
+      color: #2C3E50;
+      &__title {
+        @include section-title;
+      }
+      &__content {
+        margin-top: 40px;
+
+        .content-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 10px;
+
+          &__name {}
+          &__icons {
+            display: flex;
+            gap: 16px;
+            .icon {
+              width: 24px;
+              height: 24px;
+
+              &.account {
+                border: none;
+                background-color: transparent;
+              }
+
+              img {
+                width: 100%;
+              }
+            }
+          }
+
+          &__account {
+            padding: 10px;
+            font-size: 14px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            display: none;
+
+            &.isActive {
+              display: block;
+            }
+          }
+
+        }
+      }
+    }
+
+
+    &-gallery {
+      padding: 80px 20px;
+      text-align: center;
+      &__title {
+        @include section-title;
+      }
+      &__contents {
+        width: 100%;
+      }
+      &__photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 40px;
+        gap: 4px;
+
+        .photo {
+          width: 150px;
+          height: 150px;
+
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              background-image: url("../src/assets/img/wedding_0"+ $i + ".jpg");
+
+              @if ($i == 4) {
+                background-color: rgba(0,0,0,0.5);
+                background-blend-mode: multiply;
+                position: relative;
+
+                &:after {
+                  content: '더보기 +';
+                  font-size: 14px;
+                  width: 100%;
+                  height: auto;
+                  color: #ffffff;
+
+                  position: absolute;
+                  top: 50%;
+                  bottom: 50%;
+                  left: 0;
+                  right: 0;
+                }
+              }
+            }
+          }
+          background-position: center center;
+          background-size: cover;
+
+        }
+
+      }
+    }
+
+
+    &-survey {
+      padding: 80px 40px;
+      text-align: center;
+      color: #2C3E50;
+
+      &__title {
+        @include section-title;
+      }
+      &__msg {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.6em;
+      }
+      &__data {
+        margin-top: 30px;
+        width: 100%;
+
+        .data-search {
+          &__input {
+            padding: 8px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+          }
+          &__btn {
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: dodgerblue;
+            color: #ffffff;
+          }
+
+        }
+        .data-table {
+          th, td {
+            width: 33.3%;
+            border: 1px solid #ccc;
+          }
+        }
+
+      }
+
+      &__form {
+        margin-top: 40px;
+        text-align: left;
+        color: #555555;
+        font-size: 14px;
+
+        .form-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 40px;
+          input[type="text"] {
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 8px 12px;
+            width: 60%;
+          }
+          input[type="text"]:focus {
+            border: 1px solid dodgerblue;
+            outline: none;
+            transition: all 0.1s ease-in-out;
+          }
+
+          div {
+            flex: 1 1 0;
+            display: flex;
+            justify-content: right;
+
+            label {
+              display: flex;
+              align-items: center;
+
+              &:first-of-type {
+                margin-right: 20px;
+              }
+
+              input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+              }
+              input[type="radio"] + a {
+                width: 20px;
+                height: 20px;
+                background-image: url("../src/assets/icons/unchecked.png");
+                background-size: cover;
+
+                & + span {
+                  color: #777777;
+                }
+              }
+              input[type="radio"]:checked + a {
+                background-image: url("../src/assets/icons/checked.png");
+
+                & + span {
+                  font-weight: 600;
+                  color: dodgerblue;
+                }
+              }
+
+              span {
+                padding-left: 8px;
+              }
+            }
+
+          }
+        }
+
+        .form__btn {
+          padding: 15px 30px;
+          border: none;
+          border-radius: 8px;
+          color: #ffffff;
+          background: dodgerblue;
+          font-size: 16px;
+
+          margin: 40px auto 0;
+          display: block;
+        }
+
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 5px;
+    li {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 5px;
+      border: 1px solid #cccccc;
+      p {
+        width: 33.3%;
+      }
+    }
+  }
+
+  .galleryMore {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #aaaaaa;
+  }
+}

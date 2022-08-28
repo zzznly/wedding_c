@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wedding">
+    <Header></Header>
+    <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/common/Header.vue';
+import Footer from './components/common/Footer.vue';
+// import axios from 'axios';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    Header,
+    Footer
+  },
+  // methods: {
+  //   getAttendantList() {
+  //     axios.get("https://92ec6253-a401-4618-a8d2-a2b382c16817.mock.pstmn.io/list").then((result) => {
+  //       console.log(result.data).catch(()=>{});
+  //     })
+  //   }
+  // },
+  // created() {
+  //   this.getAttendantList();
+  // }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import 'assets/styles/common';
+//@import 'assets/'
+
 </style>
